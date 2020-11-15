@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 50%;
+    margin-left: 8vw;
+    text-align: center;
+}
+
+.login_container{
+    width: 50%;
+    text-align: center;
+    margin-left: 0.5vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding-top: 10vh;
+    margin-right: 40vw;
+}
+
+button {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 27px;
+    width: 30%;
+    border: none;
+    color: #707070;
+    margin: 1.5em;
+    line-height: 2.5;
+    font-size: 1.25em;
+}
+
+input{
+    margin: 1em;
+    padding: 1em;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    width: 50%;
+    font-size: 1em;
+}
+
+@media only screen and (max-device-width: 420px){
+    .container {
+        flex-direction: column;
+    }
+    * {
+        font-size: 36px;
+    }
+    .logo-conteiner, .logo {
+        width: 100%;
+ 
+    }
+
+    form{
+        margin: auto;
+        padding-top: 0;
+
+    }
+
+    .logo{
+        margin-left: 0;
+    }
+
+    img{
+        height: 12em;
+        margin: 2em;
+    }
+
+    input{
+        width: 120%;
+
+    }
+    button{
+        width: 120%;
+        
+    }
+}
