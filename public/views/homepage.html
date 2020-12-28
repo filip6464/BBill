@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/bills.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/rooms.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/images.css"> 
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>
     <title>Home page</title>
 </head>
@@ -9,45 +12,55 @@
         <img src="../img/logo_small.svg">
     </header>
     <div class="base-container">
-
         <nav>
-            <ul>
-                <li class="button">
+            <ul class="nav">
+                <li class="nav">
                     <i class="fas fa-home"></i>
                     <a href="#">Home page</a>
                 </li>
-                <li class="button">
+                <li class="nav">
                     <i class="fas fa-plus"></i>
                     <a href="#">New room</a>                   
                 </li>
-                <li class="button">
+                <li class="nav">
                     <i class="fas fa-plus"></i>
                     <a href="#">New bill</a>              
                 </li>
-                <li class="button">
+                <li class="nav">
                     <i class="fas fa-user-friends"></i>
                     <a href="#">Rooms</a>                 
                 </li>
-                <li class="button">
+                <li class="nav">
                     <i class="fas fa-money-bill"></i>
                     <a href="#">Bills</a>
                 </li>
-                <li class="button">
+                <li class="nav">
                     <i class="fas fa-sign-out-alt"></i>
                     Logout
                 </li>
             </ul>
         </nav>
         <main>
-            <section class="lastBils">
-                Last Bills
-                <ul>
-                    <li class="button"></li>
+            <section class="bills">
+                <div class="title">Last Bills</div> 
+                <div class="label">
+                    Name        Amount  Paid
+                </div>
+                <ul class="bills">
+                    <li id="bill-1">
+                        <h2>Title</h2>
+                        <p>Amount</p>
+                        <img class="face" src="../img/uploads/face1.png">
+                        <img class="face" src="../img/uploads/face1.png">
+                        <img class="face" src="../img/uploads/face1.png">
+                    </li>
                 </ul>
             </section>
-            <section class="lastRooms">
+            <section class="rooms">
                 Last Rooms
-                <div class="headerlastRooms"></div>
+                    <ul class="rooms">
+                        <li class="roombutton">room</li>
+                    </ul>
             </section>
         </main>
     </div>

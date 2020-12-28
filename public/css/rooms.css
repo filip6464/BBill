@@ -1,0 +1,27 @@
+.rooms{
+display: flex;
+flex-direction: column;
+height: 100%;
+width: 50%;
+background-color: blue;
+}
+
+ul.rooms{
+    list-style-type: none;
+}
+
+li.rooms{
+    
+}
+
+.rooms{
+    text-align: left;
+    font: normal normal normal 30px/37px Century Gothic;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.label{
+    font: normal normal normal 20px/24px Century Gothic;
+}

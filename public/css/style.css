@@ -128,12 +128,12 @@ a{
     line-height: 2em;
 }
 
-li>i{
+li.nav>i{
     font-size: 1.3em;
     padding: 0.2em;
 }
 
-li.button{
+li.nav{
 border: 1px solid #707070;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border-radius: 0.6em;
@@ -143,7 +143,8 @@ padding:  0.3em;
 width: 100%;
 }
 
-ul{
+
+ul.nav{
     list-style-type: none;
     font: normal normal normal 21px/28px Century Gothic;
     letter-spacing: 0px;
@@ -154,12 +155,12 @@ ul{
     position: relative;
 }
 
-li{
+li.nav{
     text-align: left;
     margin-bottom: 1.3em;
 }
 
-li:last-child{
+li.nav:last-child{
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -167,8 +168,17 @@ li:last-child{
 
 main {
     display: flex;
-    flex-direction:  column;
+    flex-direction:  row;
     height: 100%;
     width: 100%;
     background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
 }
+
+.title{
+    font: normal normal normal 30px/37px Century Gothic;   
+}
+
+.label{
+    font: normal normal normal 20px/24px Century Gothic;
+}
+

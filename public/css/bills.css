@@ -1,0 +1,36 @@
+.bills{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    background-color: aqua;
+    text-align: left;
+    font: normal normal normal 30px/37px Century Gothic;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 1em;
+    }
+
+ul.bills{
+    list-style-type: none;
+border: 1px solid #707070;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 0.6em;
+padding:  0.3em;
+width: 80%;
+align-self: center;
+}
+
+ul.bills>li{
+    display: flex;
+flex-direction: row;
+color: red;
+justify-content: space-around;
+}
+
+ul.bills>li>img {
+    
+}
+
+
+
