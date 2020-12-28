@@ -92,3 +92,83 @@ input{
         
     }
 }
+
+.base-container{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+width: 100%;
+height: 92vh;
+}
+header {
+    height: 8vh;
+    background: #36409D 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav {
+    width: 20vw;
+    height: 100%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+header>img {
+    margin-right: 2em;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+}
+
+li>i{
+    font-size: 1.3em;
+    padding: 0.2em;
+}
+
+li.button{
+border: 1px solid #707070;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 0.6em;
+text-align: left;
+letter-spacing: 0.7 px;
+padding:  0.3em;
+width: 100%;
+}
+
+ul{
+    list-style-type: none;
+    font: normal normal normal 21px/28px Century Gothic;
+    letter-spacing: 0px;
+    width: calc(100% - 40px);
+    height: 100%;
+    color: #8A8A8A;
+    padding: 0.2em;
+    position: relative;
+}
+
+li{
+    text-align: left;
+    margin-bottom: 1.3em;
+}
+
+li:last-child{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction:  column;
+    height: 100%;
+    width: 100%;
+    background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
+}
