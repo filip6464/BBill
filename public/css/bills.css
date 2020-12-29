@@ -1,10 +1,30 @@
+.title{
+    margin-top: 0.8em;
+    margin-left: 0.8em;
+    font: normal normal normal 30px/37px Century Gothic;   
+}
+
+.label{
+    font: normal normal normal 21px/24px Century Gothic;
+    display: flex;
+    align-content: center;
+    margin-top: 1em;
+}
+.mid{
+    margin-left: 2em;
+   }
+
+.label>div{
+ display: flex;
+justify-content: center;
+width: 80%;
+}
+
 .bills{
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 50%;
-    background-color: aqua;
-    text-align: left;
     font: normal normal normal 30px/37px Century Gothic;
     color: #FFFFFF;
     opacity: 1;
@@ -12,25 +32,61 @@
     }
 
 ul.bills{
-    list-style-type: none;
+list-style-type: none;
 border: 1px solid #707070;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border-radius: 0.6em;
-padding:  0.3em;
+padding: 0;
 width: 80%;
+height: 80%;
 align-self: center;
+margin-bottom: 2em;
+column-count: 3;
+overflow-y: scroll;
 }
+
 
 ul.bills>li{
-    display: flex;
-flex-direction: row;
-color: red;
-justify-content: space-around;
+display: inline-grid;
+border-bottom:solid grey;
+height: 12%;
+}
+ul.bills>li>a { 
+    color: #707070;
+    display: flex; 
+    text-decoration: none; 
+    align-items: center;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+ul.bills>li:last-child{
+    border-bottom:none;
 }
 
-ul.bills>li>img {
-    
+ul.bills>li>a>h2{
+    padding: 1em;
+    overflow: hidden;
+    max-width: 7em;
+    width: 100%;
+}
+ul.bills>li>a>h3{
+    padding: 1em;
+    overflow: hidden;
+    margin-left: 6em;
+    max-width: 6em;
+    width: 100%;
 }
 
+ul.bills>li>a>div>img{
+    padding: 1em;
+    margin-top: 0.8em;
+    height: auto;
+    width: 40%;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+
+
+}
 
 

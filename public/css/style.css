@@ -122,7 +122,7 @@ header>img {
     margin-right: 2em;
 }
 
-a{
+nav>ul>li>a{
     text-decoration: none;
     display: inline-block;
     line-height: 2em;
@@ -174,11 +174,11 @@ main {
     background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
 }
 
-.title{
-    font: normal normal normal 30px/37px Century Gothic;   
-}
 
-.label{
-    font: normal normal normal 20px/24px Century Gothic;
-}
+
+
+
+
+
+
 
