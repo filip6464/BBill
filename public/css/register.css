@@ -1,0 +1,36 @@
+div.buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    width: -webkit-fill-available;
+}
+
+div>button{
+    margin: 1em;
+}
+
+div>a{
+    text-decoration: none;
+    font: normal normal normal 21px/31px Segoe UI;
+    letter-spacing: 0px;
+    color: #F6F1F1;
+    margin: 1em;
+    align-items: center;
+    display: flex;
+    line-height: 1.2em;
+
+}
+
+@media only screen and (max-device-width: 420px){
+
+    div>a{
+        font-size: 1.5em;
+    }
+
+    div.buttons{
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+        width: max-content;
+    }
+}
+
