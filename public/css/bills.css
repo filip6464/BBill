@@ -47,7 +47,7 @@ overflow-y: scroll;
 
 
 ul.bills>li{
-display: inline-grid;
+display: flex;
 border-bottom:solid grey;
 height: 12%;
 }
@@ -56,31 +56,41 @@ ul.bills>li>a {
     display: flex; 
     text-decoration: none; 
     align-items: center;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
+    width: 100%;
+    height: 100%;
 }
 ul.bills>li:last-child{
     border-bottom:none;
 }
 
 ul.bills>li>a>h2{
+    margin: unset;
     padding: 1em;
     overflow: hidden;
-    max-width: 7em;
+    max-width: 10em;
     width: 100%;
 }
 ul.bills>li>a>h3{
+    margin: 1px;
     padding: 1em;
     overflow: hidden;
-    margin-left: 6em;
     max-width: 6em;
     width: 100%;
 }
 
+ul.bills>li>a>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    padding: 1em;
+    height: 100%;
+}
+
 ul.bills>li>a>div>img{
-    margin-top: 0.8em;
-    height: auto;
-    width: 60%;
+    padding: 1em;
+    height: 90%;
+    width: auto;
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
