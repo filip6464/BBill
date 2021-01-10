@@ -1,12 +1,12 @@
 body {
     margin: 0;
+
 }
 
 .container {
+    background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
     width: 100vw;
     height: 100vh;
-    background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -20,7 +20,7 @@ body {
 }
 
 .login_container{
-    width: 50%;
+    width: 70%;
     text-align: center;
     margin-left: 0.5vw;
 }
@@ -58,14 +58,14 @@ input{
 
 @media only screen and (max-device-width: 420px){
     .container {
+        width: 103vw;
+        height: 103vh;
         flex-direction: column;
     }
     * {
         font-size: 36px;
-    }
-    .logo-conteiner, .logo {
+    }.logo {
         width: 100%;
- 
     }
 
     form{
