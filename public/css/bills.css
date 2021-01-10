@@ -78,10 +78,9 @@ ul.bills>li>a>h3{
 }
 
 ul.bills>li>a>div>img{
-    padding: 1em;
     margin-top: 0.8em;
     height: auto;
-    width: 40%;
+    width: 60%;
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
