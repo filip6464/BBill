@@ -31,7 +31,7 @@ width: 100%;
     font-size: 1em;
     }
 
-ul.rooms{
+.rooms>ul{
 list-style-type: none;
 border: 1px solid #707070;
 background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -46,12 +46,12 @@ overflow-y: scroll;
 }
 
 
-ul.rooms>li{
+.rooms>li{
 display: flex;
 border-bottom:solid grey;
 height: 12%;
 }
-ul.rooms>li>a { 
+.rooms>li>a { 
     color: #707070;
     display: flex; 
     text-decoration: none; 
@@ -59,12 +59,11 @@ ul.rooms>li>a {
     width: 100%;
 
 }
-ul.rooms>li:last-child{
+.rooms>li:last-child{
     border-bottom:none;
 }
 
-
-ul.rooms>li>a>h2{
+.rooms>li>a>h2{
     display: flex;
     justify-content: center;
     margin: 0;
@@ -73,7 +72,7 @@ ul.rooms>li>a>h2{
     max-width: 7em;
     width: 50%;
 }
-ul.rooms>li>a>div{
+.rooms>li>a>div{
     padding: 1em;
     width: 70%;
     height: 100%;
@@ -83,7 +82,7 @@ ul.rooms>li>a>div{
 }
 
 
-ul.rooms>li>a>div>img{
+.rooms>li>a>div>img{
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 0.5em;
@@ -91,8 +90,8 @@ ul.rooms>li>a>div>img{
     height: 90%;
     width: auto;
     -webkit-border-radius: 50%;
-       -moz-border-radius: 50%;
-            border-radius: 50%;
+    -moz-border-radius: 50%;
+         border-radius: 50%;
 }
 
 
