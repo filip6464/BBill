@@ -1,12 +1,17 @@
 <?php
 
 require_once 'src/controllers/DefaultController.php';
+require_once 'src/controllers/SecurityController.php';
 
 class Routing {
     public static $routes;
 
-    public static function get($url, $controller){
-        self::$routes[$url] = $controller;
+    public static function get($url, $viewController){
+        self::$routes[$url] = $viewController;
+    }
+
+    public static function post($url, $viewController){
+        self::$routes[$url] = $viewController;
     }
 
     public static function run($url){
@@ -19,6 +24,7 @@ class Routing {
         $controller = self::$routes[$action];
         $object = new $controller;
 
+        $action = $action ?: 'index';
         $object->$action();
     }
 

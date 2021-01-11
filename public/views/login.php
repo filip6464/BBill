@@ -9,10 +9,18 @@
             <img src="public/img/logo_svg.svg">
         </div>
         <div class="login_container">
-            <form>
+            <form class="login" action="login" method="POST">
+                <div class="messages">
+                    <?php if(isset($messages)){
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                </div>
                 <input name="email" type="text" placeholder="username@gmail.com">
                 <input name="password" type="password" placeholder="password">
-                <button>Sign  in</button>
+                <button type="submit">Sign  in</button>
             </form>
         </div>
 
