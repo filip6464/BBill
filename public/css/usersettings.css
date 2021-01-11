@@ -1,0 +1,24 @@
+.usersettings{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font: normal normal normal 30px/37px Century Gothic;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 1em;
+}
+
+.usersettings form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.usersettings input{
+    width: 25%;
+}
+.usersettings textarea{
+    width: 18%;
+}

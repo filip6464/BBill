@@ -7,13 +7,26 @@ class User
     private $password;
     private $name;
     private $surname;
+    private $image;
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+
+    public function __construct(string $email, string $password, string $name,string $surname, $image)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->image = $image;
+    }
+
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image)
+    {
+        $this->image = $image;
     }
 
     public function getEmail(): string

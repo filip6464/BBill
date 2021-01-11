@@ -9,5 +9,6 @@ $path = parse_url($path, PHP_URL_PATH);
 Routing::get('','DefaultController');
 Routing::get('homepage','DefaultController');
 Routing::post('login','SecurityController');
+Routing::post('usersettings','HomepageController');
 
 Routing::run($path);

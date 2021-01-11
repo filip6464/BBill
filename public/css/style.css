@@ -46,7 +46,7 @@ button {
     font-size: 1.25em;
 }
 
-input{
+input, textarea {
     margin: 1em;
     padding: 1em;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -54,6 +54,7 @@ input{
     border-radius: 10px;
     width: 50%;
     font-size: 1em;
+    color: #707070;
 }
 
 .title{
@@ -90,22 +91,26 @@ header {
         background: #36409D 0% 0% no-repeat padding-box;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
     }
-    header>i {
+    header i {
     padding: 1em;
     font-size: 2.5em;
+        color: white;
     }
-    header>i.fas {
-        display: none;
-    }
+
     header>img {
         margin-right: 2em;
     }
+    header i.fas {
+        display: flex;
+        }
     header a{
         text-decoration: none;
-        display: none;
+        display: flex;
+        height: 100%;
+        align-items: center;
     }
 nav {
      width: 20vw;
@@ -230,23 +235,12 @@ font-size: 1.5em;
         width: 120%;
         
     }
-    header {
-        justify-content: space-between
-    }
-    header a{
-        display: flex;
+    header i{
+        font-size: 1.5em;
     }
     .base-container{
         height: 82vh;
         }
-    header i{
-        padding: 1em;
-        font-size: 1.5em;
-        color: white;
-    }
-    header i.fas {
-        display: flex;
-    }
     .navbar{
         display: flex;
       }

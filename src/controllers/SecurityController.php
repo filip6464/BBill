@@ -8,7 +8,7 @@ class SecurityController extends AppController
     public function login(){
         $user = new User('jkowalski@gmail.com','admin','Jan','Kowalski');
 
-        if($this->isPost()){
+        if(!$this->isPost()){
             return $this->login('login');
         }
 

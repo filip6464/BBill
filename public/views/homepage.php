@@ -36,8 +36,8 @@
                     <a href="#">Bills</a>
                 </li>
                 <li class="nav">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
+                    <i class="fas fa-user-cog"></i>
+                    <a href="#">Settings</a>
                 </li>
             </ul>
         </nav>
