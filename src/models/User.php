@@ -1,8 +1,7 @@
 <?php
 
 
-class User
-{
+class User {
     private $email;
     private $password;
     private $name;
@@ -10,13 +9,13 @@ class User
     private $image;
 
 
-    public function __construct(string $email, string $password, string $name,string $surname, $image)
+    public function __construct(string $email, string $password, string $name,string $surname)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
-        $this->image = $image;
+        $this->image = null;
     }
 
     public function getImage(): string
