@@ -3,6 +3,10 @@ body {
 
 }
 
+section{
+    margin: 0.5em;
+}
+
 .container {
     background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
     width: 100vw;
@@ -58,7 +62,6 @@ input, textarea {
 }
 
 .title{
-    margin-top: 0.8em;
     margin-left: 0.8em;
     font: normal normal normal 30px/37px Century Gothic;   
 }
@@ -172,6 +175,8 @@ nav {
         height: 100%;
         width: 100%;
         background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
+        font: normal normal normal 17px/37px Century Gothic;
+        color: white;
     }
 
 /* Place the navbar at the bottom of the page, and make it stick */

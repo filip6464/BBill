@@ -8,6 +8,7 @@ $path = parse_url($path, PHP_URL_PATH);
 //Tablica routingu
 Routing::get('','DefaultController');
 Routing::get('homepage','DefaultController');
+Routing::post('newbill','NewBillController');
 Routing::post('login','SecurityController');
 Routing::post('usersettings','HomepageController');
 
