@@ -44,223 +44,227 @@
         <main>
             <section class="bills">
                 <div class="title">Last Bills</div> 
-                <div class="label">
-                    <div>Name</div>
-                    <div class="mid">Amount</div>
-                    <div>Bill Owner</div>
+                <div class="bills-list">
+                    <div class="label-bills">
+                        <div>Name</div>
+                        <div class="mid">Amount</div>
+                        <div>Bill Owner</div>
+                    </div>
+                    <ul>
+                        <li id="bill-1">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-2">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-3">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-1">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-2">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-3">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-1">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-2">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="bill-3">
+                            <a href="#">
+                                <h2>Integration</h2>
+                                <h3>150$</h3>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="bills">
-                    <li id="bill-1">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-2">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-3">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-1">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-2">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-3">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-1">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-2">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="bill-3">
-                        <a href="#">
-                        <h2>Integration</h2>
-                        <h3>150$</h3>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                </ul>
             </section>
             <section class="rooms">
-                <div class="title">Last rooms</div> 
-                <div class="label">
-                    <div>ID</div>
-                    <div class="mid">Roommates</div>
+                <div class="title">Last rooms</div>
+                <div class="rooms-list">
+                    <div class="label-rooms">
+                        <div>ID</div>
+                        <div class="mid">Roommates</div>
+                    </div>
+                    <ul>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-2">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-3">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li id="room-1">
+                            <a href="#">
+                                <h2>458 625</h2>
+                                <div>
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/face1.png">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="rooms">
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-2">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-3">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                    <li id="room-1">
-                        <a href="#">
-                        <h2>458 625</h2>
-                        <div>
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                            <img src="public/img/uploads/face1.png">
-                        </div>
-                        </a>
-                    </li>
-                </ul>
             </section>
         </main>
     </div>

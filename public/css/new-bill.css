@@ -2,16 +2,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 50%;
-    margin-left: 1em;
+    padding-left: 2em;
 }
 
-.newbill form{
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0em;
-}
 
 .newbill button{
     display: flex;
@@ -22,16 +15,39 @@
 }
 
 .newbill input{
-width: 60%;
-height: 50%;
+    font-size: 68%;
+width: 50%;
     align-items: center;
-    padding: 0.3em;
-    padding-left: 1em;
-    margin: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    line-height: 2em;
+}
+
+.newbill ul{
+    justify-content: center;
+    list-style-type: none;
+    border: 1px solid #707070;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    font: normal normal normal 24px/32px Century Gothic;
+    letter-spacing: 0px;
+    color: #707070;
+    border-radius: 0.6em;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+.newbill li{
+    display: flex;
+    border-bottom:solid grey;
+    height: 15%;
+    width: 100%;
 }
 
 .newbill i{
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .newbill a{
@@ -51,8 +67,25 @@ height: 50%;
     height: 100%;
 }
 
-.title-form i{
+.bill-title{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.label-billtitle{
+    font-size: 1.2em;
+}
+
+.bill-title form{
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+
+}
+
+.bill-title i{
     background: #2699FB 0% 0% no-repeat padding-box;
     padding: 0.25em;
     color: white;
@@ -62,47 +95,103 @@ height: 50%;
 
 }
 
-.newbill>form>div{
+.bill-items{
     display: flex;
+    align-items: flex-start;
     width: 80%;
+    height: 70%;
+    flex-direction: column;
+    margin-left: 1em;
 }
 
-.title-form{
-    flex-direction: row;
+.items{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
 }
-.item-form{
+
+.bill-items form{
+    margin-top: 0.5em;
+    display: flex;
     align-items: flex-start;
+    width: 100%;
+}
+
+.label-item{
+    width: 90%;
+    column-count: 2;
 }
 
 .item-input{
-    align-items: flex-start;
+    display: flex;
     background: #FFFFFF 0% 0% no-repeat padding-box;
+    justify-content: center;
     border: 1px solid #707070;
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    margin-top: 1em;
+    margin-top: 0.3em;
+}
+.item-input input{
+    width: 30%;
 }
 
-.newbill ul{
-    justify-content: center;
-    list-style-type: none;
-    border: 1px solid #707070;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    font: normal normal normal 24px/32px Century Gothic;
-    letter-spacing: 0px;
-    color: #707070;
-    border-radius: 0.6em;
-    padding: 0;
-    width: 80%;
-    height: 40%;
-    overflow-y: scroll;
+.label-list-items{
+    font-size: 1.2em;
 }
 
-
-.newbill li{
+.bill-items form{
     display: flex;
-    border-bottom:solid grey;
-    height: 12%;
-    width: 100%;
+    justify-content: flex-start;
 }
+
+@media only screen and (max-device-width: 420px) {
+
+    .newbill {
+        height: 70vh;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0em;
+    }
+
+    .title{
+        align-items: flex-start;
+        font-size: 2em;
+    }
+
+    .newbill input{
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .label-item{
+        margin-top: 0.5em;
+    }
+    .bill-title {
+        width: 80%;
+        margin-left: 0em;
+    }
+    .bill-title form{
+        width: 100%;
+    }
+
+    .bill-items {
+        margin: 0em;
+    }
+
+    .items{
+        margin-left: 0;
+    }
+    .bill-items li{
+        height: 5.5vh;
+    }
+
+
+
+}
+
+
+
+
+

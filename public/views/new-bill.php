@@ -46,36 +46,42 @@
     <main>
         <section class="newbill">
             <div class="title">New bill</div>
-            <div class="label newbill">Tittle of bill</div>
-            <form class="title-form">
-                <input name="title" type="text" placeholder="title">
-                <button type="submit">
-                    <i class="fas fa-check"></i>
-                </button>
-            </form>
-            <div class="label newbill">List of items</div>
-            <form class="item-form">
-                <div class="label">
-                    <div>Name</div>
-                    <div>Value</div>
-                </div>
-                <div class="item-input">
-                    <input name="item-name" type="text" placeholder="item name">
-                    <input name="item-value" type="text" placeholder="value">
+            <div class="bill-title">
+                <div class="label-billtitle">Title of bill</div>
+                <form>
+                    <input name="billtitle" type="text" placeholder="title">
                     <button type="submit">
-                        <i class="fas fa-plus-circle"></i>
+                        <i class="fas fa-check"></i>
                     </button>
+                </form>
+            </div>
+            <div class="bill-items">
+                <div class="label-list-items">List of items</div>
+                <div class="items">
+                    <form>
+                        <div class="label-item">
+                            <div>Name</div>
+                            <div>Value</div>
+                        </div>
+                        <div class="item-input">
+                            <input name="item-name" type="text" placeholder="item name">
+                            <input name="item-value" type="text" placeholder="value">
+                            <button type="submit">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div>beer round 1</div>
+                                <div>45$</div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
 
-            </form>
-            <ul>
-                <li>
-                    <a href="#">
-                        <div>beer round 1</div>
-                        <div>45$</div>
-                    </a>
-                </li>
-            </ul>
         </section>
         <section class="assignRoommates">
             <div class="title">Assign Roommates</div>
@@ -88,8 +94,7 @@
                 <img src="public/img/uploads/face1.png">
             </div>
             <div class="searchBar">
-                <div>Search</div>
-                <i class="fas fa-search"></i>
+                <input name="search" type="text" placeholder="Search">
             </div>
             <div class="searchGrid">
                 <div class="room">
@@ -120,14 +125,6 @@
                 <div class="room">
                     <h5>Jack Party (28/12/2020)</h5>
                     <div class="roomsGrid">
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
                         <div class="person">
                             <img src="public/img/uploads/face1.png">
                             <h6>Joanna Doe</h6>

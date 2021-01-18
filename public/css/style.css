@@ -1,10 +1,34 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+*{
+    font-size: 21px;
+}
 body {
     margin: 0;
 
 }
 
 section{
-    margin: 0.5em;
+    padding: 1em;
+    width: 50%;
 }
 
 .container {
@@ -35,8 +59,6 @@ form{
     justify-content: center;
     align-items: center;
     width: 80%;
-    padding-top: 10vh;
-    margin-right: 40vw;
 }
 
 button {
@@ -62,24 +84,8 @@ input, textarea {
 }
 
 .title{
-    margin-left: 0.8em;
-    font: normal normal normal 30px/37px Century Gothic;   
+    font: normal normal normal 33px/37px Century Gothic;
 }
-
-.label{
-    font: normal normal normal 21px/24px Century Gothic;
-    display: flex;
-    align-content: center;
-    margin-top: 1em;
-}
-
-
-.label>div{
- display: flex;
-justify-content: center;
-width: 80%;
-}
-
 
 .base-container{
     display: flex;
@@ -116,7 +122,7 @@ header {
         align-items: center;
     }
 nav {
-     width: 20vw;
+     width: 15vw;
     height: 100%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     display: flex;
@@ -141,7 +147,7 @@ nav {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 0.6em;
     text-align: left;
-    letter-spacing: 0.7 px;
+    letter-spacing: 0.7px;
     padding:  0.3em;
     width: 100%;
     }
@@ -170,10 +176,10 @@ nav {
     }
     
     main {
+        width: 85vw;
         display: flex;
         flex-direction:  row;
         height: 100%;
-        width: 100%;
         background: transparent linear-gradient(180deg, #7A88FF 0%, #323C97 100%) 0% 0% no-repeat padding-box;
         font: normal normal normal 17px/37px Century Gothic;
         color: white;
@@ -203,9 +209,26 @@ nav {
 font-size: 1.5em;
   }
 @media only screen and (max-device-width: 420px){
+    *{
+        font-size: 30px;
+    }
+    main{
+        width: 100vw;
+        height: 100%;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    section{
+        padding: 0em;
+        width: 100%;
+    }
+    .title{
+        margin-top: 1em;
+        font-size: 4em;
+    }
 
-    .label{
-        margin-top: 3em;
+    nav{
+        display: none;
     }
     .container {
         width: 103vw;
