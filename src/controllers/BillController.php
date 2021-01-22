@@ -2,12 +2,12 @@
 
 require_once 'AppController.php';
 
-class NewBillController extends AppController
+class BillController extends AppController
 {
     private $messages = [];
 
-    public function newBill(){
-            return $this->render('new-bill',['messages' => $this->messages]);
+    public function bill(){
+            return $this->render('bill',['messages' => $this->messages]);
     }
 
 }

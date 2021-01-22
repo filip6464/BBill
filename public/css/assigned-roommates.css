@@ -1,62 +1,31 @@
 .assignRoommates{
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
-.iconGrid{
-    margin: 0.5em;
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(8,1fr);
-    grid-template-rows: auto;
-    grid-gap: 0.5em;
-    padding: 0.3em;
-    overflow-x: hidden;
-    height: 23%;
-}
 
 .assignRoommates img {
     place-self: center;
-    height: 50%;
+    height: 60%;
     width: auto;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
 
-.assignRoommates input{
-    display: flex;
-    color: #707070;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    padding: 0.8em;
-    margin-bottom: 1em;
-    justify-self: flex-start;
-    width: 40%;
 
-}
-
-.searchGrid h5 {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-.searchGrid{
-    overflow-y: scroll;
-    height: 50%;
-}
 .roomsGrid{
     margin: 0.5em;
     display: grid;
     place-items: center;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
     grid-gap: 0.5em;
     padding: 0.3em;
-    overflow-y: hidden;
-    height: 25%;
+    overflow-y: scroll;
+    height: 60%;
 }
 
 
@@ -76,7 +45,7 @@
 margin: 0.3em;
 }
 .person img {
-    width: 30%;
+    width: 40%;
 }
 
 @media only screen and (max-device-width: 420px) {

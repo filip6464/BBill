@@ -74,8 +74,12 @@ width: 50%;
     margin-left: 1em;
 }
 
-.label-billtitle{
+.label-goal{
     font-size: 1.2em;
+}
+
+.label-goal div{
+    margin-left: 1em;
 }
 
 .bill-title form{
@@ -106,6 +110,7 @@ width: 50%;
 
 .items{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 1em;
@@ -127,6 +132,7 @@ width: 50%;
     display: flex;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     justify-content: center;
+    align-items: center;
     border: 1px solid #707070;
     border-radius: 10px;
     width: 100%;
@@ -172,6 +178,17 @@ width: 50%;
         width: 80%;
         margin-left: 0em;
     }
+
+    .label-goal{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .label-goal div{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
     .bill-title form{
         width: 100%;
     }
