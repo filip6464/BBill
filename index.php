@@ -12,5 +12,6 @@ Routing::post('newbill','NewBillController');
 Routing::post('bill','BillController');
 Routing::post('login','SecurityController');
 Routing::post('usersettings','HomepageController');
+Routing::post('newroom','NewRoomController');
 
 Routing::run($path);
