@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/newroom.css">
+    <link rel="stylesheet" type="text/css" href="public/css/room.css">
     <link rel="stylesheet" type="text/css" href="public/css/assign-roommates.css">
 
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>
@@ -44,20 +44,28 @@
         </ul>
     </nav>
     <main>
-        <section class="newroom">
-            <div class="title">New Room</div>
-            <div class="room-title">
-                <div class="label-roomtitle">Title of room</div>
-                <form>
-                    <input name="roomtitle" type="text" placeholder="Room name">
-                    <button type="submit">
-                        <i class="fas fa-check"></i>
-                    </button>
-                </form>
+        <section class="room">
+            <div class="box">
+            <div class="title">Room - Jacks Party</div>
+            <div class="label-roomID">RoomID</div>
+            <div class="roomID">456 456</div>
+            <div class="qrCode">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=300x300" alt="" title="" />
+            </div>
+            <div class="buttons">
+                <div class="button">
+                    <i class="fas fa-share-alt"></i>
+                    <div>Share</div>
+                </div>
+                <div class="button">
+                    <i class="fas fa-door-open i-leave"></i>
+                    <div>Leave</div>
+                </div>
+            </div>
             </div>
         </section>
         <section class="assignRoommates">
-            <div class="title">Assign Roommates</div>
+            <div class="title">Invite Roommates</div>
             <div class="iconGrid">
                 <img src="public/img/uploads/face1.png">
                 <img src="public/img/uploads/face1.png">
@@ -70,7 +78,7 @@
                 <input name="search" type="text" placeholder="Search">
             </div>
             <div class="searchGrid">
-                <div class="room">
+                <div>
                     <h5>Jack Party (28/12/2020)</h5>
                     <div class="roomsGrid">
                         <div class="person">
@@ -95,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="room">
+                <div>
                     <h5>Jack Party (28/12/2020)</h5>
                     <div class="roomsGrid">
                         <div class="person">
@@ -112,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="room">
+                <div>
                     <h5>Jack Party (28/12/2020)</h5>
                     <div class="roomsGrid">
                         <div class="person">
@@ -141,16 +149,5 @@
         </section>
     </main>
 </div>
-<div class="navbar">
-    <a href="#">
-        <i class="fas fa-user-friends"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-history"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-list"></i>
-    </a>
-</div>
-
+<?php include __DIR__.'/../sections/bottomNavBar.php';?>
 </body>

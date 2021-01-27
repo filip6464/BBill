@@ -7,11 +7,13 @@ $path = parse_url($path, PHP_URL_PATH);
 
 //Tablica routingu
 Routing::get('','DefaultController');
-Routing::get('homepage','DefaultController');
-Routing::post('newbill','NewBillController');
+Routing::get('homepage','HomepageController');
+Routing::post('newbill','BillController');
 Routing::post('bill','BillController');
 Routing::post('login','SecurityController');
+Routing::post('register','SecurityController');
 Routing::post('usersettings','HomepageController');
-Routing::post('newroom','NewRoomController');
+Routing::post('newroom','RoomController');
+Routing::post('room','RoomController');
 
 Routing::run($path);

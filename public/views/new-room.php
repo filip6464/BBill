@@ -16,32 +16,7 @@
 </header>
 <div class="base-container">
     <nav>
-        <ul class="nav">
-            <li class="nav">
-                <i class="fas fa-home"></i>
-                <a href="#">Home page</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-plus"></i>
-                <a href="#">New room</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-plus"></i>
-                <a href="#">New bill</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-user-friends"></i>
-                <a href="#">Rooms</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-money-bill"></i>
-                <a href="#">Bills</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-user-cog"></i>
-                <a href="#">Settings</a>
-            </li>
-        </ul>
+        <?php include 'leftNavBar.php';?>
     </nav>
     <main>
         <section class="newroom">
@@ -141,16 +116,6 @@
         </section>
     </main>
 </div>
-<div class="navbar">
-    <a href="#">
-        <i class="fas fa-user-friends"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-history"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-list"></i>
-    </a>
-</div>
+<?php include __DIR__.'/../sections/bottomNavBar.php';?>
 
 </body>

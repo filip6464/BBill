@@ -14,32 +14,7 @@
     </header>
     <div class="base-container">
         <nav>
-            <ul class="nav">
-                <li class="nav">
-                    <i class="fas fa-home"></i>
-                    <a href="#">Home page</a>
-                </li>
-                <li class="nav">
-                    <i class="fas fa-plus"></i>
-                    <a href="#">New room</a>                   
-                </li>
-                <li class="nav">
-                    <i class="fas fa-plus"></i>
-                    <a href="#">New bill</a>              
-                </li>
-                <li class="nav">
-                    <i class="fas fa-user-friends"></i>
-                    <a href="#">Rooms</a>                 
-                </li>
-                <li class="nav">
-                    <i class="fas fa-money-bill"></i>
-                    <a href="#">Bills</a>
-                </li>
-                <li class="nav">
-                    <i class="fas fa-user-cog"></i>
-                    <a href="#">Settings</a>
-                </li>
-            </ul>
+            <?php include 'leftNavBar.php';?>
         </nav>
         <main>
             <section class="bills">
@@ -51,87 +26,18 @@
                         <div>Bill Owner</div>
                     </div>
                     <ul>
-                        <li id="bill-1">
+                        <?php
+                        foreach ($usersbills as $userbill): ?>
+                        <li id="bill-<?=$userbill->getlocalID()?>">
                             <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
+                                <h2><?=$userbill->getTitle()?></h2>
+                                <h3><?=$userbill->getAmount()?>$</h3>
                                 <div>
-                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/<?=$userbill->getOwnerImage()?>">
                                 </div>
                             </a>
                         </li>
-                        <li id="bill-2">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-3">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-1">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-2">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-3">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-1">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-2">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="bill-3">
-                            <a href="#">
-                                <h2>Integration</h2>
-                                <h3>150$</h3>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </section>
@@ -143,141 +49,27 @@
                         <div class="mid">Roommates</div>
                     </div>
                     <ul>
-                        <li id="room-1">
+                        <?php
+                        foreach ($usersrooms as $userroom): ?>
+                        <li id="room-<?=$userroom->getlocalID()?>">
                             <a href="#">
-                                <h2>458 625</h2>
+                                <h2><?=$userroom->getlocalID()?></h2>
                                 <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
+                                    <img src="public/img/uploads/<?=$userroom->getOwnerImage()?>">
+                                    <?php
+                                    $roommates = $userroom->getRoommates();
+                                    foreach ($roommates as $roommate):?>
+                                    <img src="public/img/uploads/<?=$roommate->getImage()?>">
+                                    <?php endforeach; ?>
                                 </div>
                             </a>
                         </li>
-                        <li id="room-2">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-3">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
-                        <li id="room-1">
-                            <a href="#">
-                                <h2>458 625</h2>
-                                <div>
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                    <img src="public/img/uploads/face1.png">
-                                </div>
-                            </a>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </section>
         </main>
     </div>
-    <div class="navbar">
-        <a href="#">
-            <i class="fas fa-user-friends"></i>
-        </a>
-        <a href="#">
-            <i class="fas fa-history"></i>
-        </a>
-        <a href="#">
-            <i class="fas fa-list"></i>
-        </a>
-      </div>
+    <?php include __DIR__.'/../sections/bottomNavBar.php';?>
 
 </body>

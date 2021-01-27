@@ -104,16 +104,7 @@
         </section>
     </main>
 </div>
-<div class="navbar">
-    <a href="#">
-        <i class="fas fa-user-friends"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-history"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-list"></i>
-    </a>
-</div>
+<?php include __DIR__.'/../sections/bottomNavBar.php';?>
+
 
 </body>

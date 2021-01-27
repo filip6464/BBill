@@ -6,16 +6,16 @@ class User {
     private $password;
     private $name;
     private $surname;
-    private $image;
+    protected $image;
 
 
-    public function __construct(string $email, string $password, string $name,string $surname)
+    public function __construct(string $email, string $password, string $name,string $surname,string $image=null)
     {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
-        $this->image = null;
+        $this->image = $image;
     }
 
     public function getImage(): string

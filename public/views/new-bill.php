@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/new-bill.css">
+    <link rel="stylesheet" type="text/css" href="public/css/newbill.css">
     <link rel="stylesheet" type="text/css" href="public/css/assign-roommates.css">
 
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>
@@ -16,32 +16,7 @@
 </header>
 <div class="base-container">
     <nav>
-        <ul class="nav">
-            <li class="nav">
-                <i class="fas fa-home"></i>
-                <a href="#">Home page</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-plus"></i>
-                <a href="#">New room</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-plus"></i>
-                <a href="#">New bill</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-user-friends"></i>
-                <a href="#">Rooms</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-money-bill"></i>
-                <a href="#">Bills</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-user-cog"></i>
-                <a href="#">Settings</a>
-            </li>
-        </ul>
+        <?php include 'leftNavBar.php';?>
     </nav>
     <main>
         <section class="newbill">
@@ -168,16 +143,6 @@
         </section>
     </main>
 </div>
-<div class="navbar">
-    <a href="#">
-        <i class="fas fa-user-friends"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-history"></i>
-    </a>
-    <a href="#">
-        <i class="fas fa-list"></i>
-    </a>
-</div>
+<?php include __DIR__.'/../sections/bottomNavBar.php';?>
 
 </body>

@@ -1,19 +1,12 @@
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
@@ -48,17 +41,28 @@ section{
 }
 
 .login_container{
-    width: 70%;
+    width: 100%;
     text-align: center;
-    margin-left: 0.5vw;
-}
-
-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    margin-left: 0.5vw;
+}
+
+.login_container a{
+    text-decoration: none;
+    color: #F6F1F1;
+    font: normal normal normal 20px/26px Segoe UI;
+}
+
+form{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }
 
 button {
@@ -208,6 +212,14 @@ nav {
   .navbar i {
 font-size: 1.5em;
   }
+
+  .no-valid{
+      border: 3px solid red;
+      border-radius: 1em;
+      box-shadow: 0 0 0.2em red;
+      outline: none;
+  }
+
 @media only screen and (max-device-width: 420px){
     *{
         font-size: 30px;
