@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/newbill.css">
     <link rel="stylesheet" type="text/css" href="public/css/assign-roommates.css">
+    <script type="text/javascript" src="./public/js/searchRoommates.js" defer></script>
 
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>
     <title>Home page</title>
@@ -61,88 +62,43 @@
         <section class="assignRoommates">
             <div class="title">Assign Roommates</div>
             <div class="iconGrid">
-                <img src="public/img/uploads/face1.png">
-                <img src="public/img/uploads/face1.png">
-                <img src="public/img/uploads/face1.png">
-                <img src="public/img/uploads/face1.png">
-                <img src="public/img/uploads/face1.png">
-                <img src="public/img/uploads/face1.png">
+                <img src="public/img/uploads/face2.png">
             </div>
             <div class="searchBar">
                 <input name="search" type="text" placeholder="Search">
             </div>
             <div class="searchGrid">
+                <?php foreach ($lastusersrooms as $lastusersroom): ?>
                 <div class="room">
-                    <h5>Jack Party (28/12/2020)</h5>
+                    <h5><?=$lastusersroom->getTitle()?>  (<?=$lastusersroom->getCreatedAt()?>)</h5>
                     <div class="roomsGrid">
+                        <?php
+                        $roommates = $lastusersroom->getRoommates();
+                        foreach ($roommates as $roommate): ?>
                         <div class="person">
-                                <img src="public/img/uploads/face1.png">
-                                <h6>Joanna Doe</h6>
+                                <img src="public/img/uploads/<?=$roommate->getImage()?> ">
+                                <h6><?=$roommate->getName()?> <?=$roommate->getSurname()?></h6>
                         </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
+                        <?endforeach; ?>
                     </div>
                 </div>
-                <div class="room">
-                    <h5>Jack Party (28/12/2020)</h5>
-                    <div class="roomsGrid">
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="room">
-                    <h5>Jack Party (28/12/2020)</h5>
-                    <div class="roomsGrid">
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                        <div class="person">
-                            <img src="public/img/uploads/face1.png">
-                            <h6>Joanna Doe</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?endforeach; ?>
         </section>
     </main>
 </div>
 <?php include __DIR__.'/../sections/bottomNavBar.php';?>
 
 </body>
+
+
+<template id="room-template">
+    <div class="room">
+        <h5>TitleDATE</h5>
+        <div class="roomsGrid">
+                <div class="person">
+                    <img src="public/img/uploads/face2.png">
+                    <h6>NameSurname</h6>
+                </div>
+        </div>
+    </div>
+</template>

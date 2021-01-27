@@ -54,8 +54,8 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2,1fr);
-    grid-gap: 0.5em;
+    grid-template-rows: repeat(1,1fr);
+    grid-gap: 1.2em;;
     padding: 0.3em;
     overflow-y: hidden;
     height: 25%;
@@ -63,6 +63,8 @@
 
 
 .person{
+    width: 100%;
+    height: 100%;
     display: flex;
     padding: 0.3em;
     background: #F1F9FF 0% 0% no-repeat padding-box;
@@ -75,10 +77,13 @@
 }
 
 .person h6{
+    text-align: center;
+    font-size: 1.1em;
 margin: 0.3em;
 }
 .person img {
-    width: 30%;
+    width: 40%;
+    height: auto;
 }
 
 @media only screen and (max-device-width: 420px) {
@@ -91,7 +96,7 @@ margin: 0.3em;
 }
 
     .assignRoommates img {
-        height: 60%;
+        height: 100%;
     }
     .assignRoommates input{
         font-size: 1em;
@@ -112,6 +117,14 @@ margin: 0.3em;
         margin: 0.5em;
     }
 
+    .person h6{
+        font-size: 3em;
+        line-height: 1.2em;
+    }
+    .person img {
+        width: 40%;
+        height: auto;
+    }
 
 
 }

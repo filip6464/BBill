@@ -30,7 +30,7 @@ class UserRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            Select email,password,name,surname,image from users u Join users_details ud on u.id_user_details= ud.id WHERE u.id = (SELECT id_user from users_rooms WHERE id_room = :givenID);
+            Select email,password,name,surname,image from users u Join users_details ud on u.id_user_details= ud.id JOIN users_rooms ur on ur.id_user = u.id WHERE ur.id_room = :givenID;
         ');
 
         $stmt->bindParam(':givenID', $givenRoomID, PDO::PARAM_INT);
@@ -48,6 +48,26 @@ class UserRepository extends Repository
             );
         }
         return $result;
+    }
+    public function getRoommatesLike(int $givenRoomID, string $searchPhraze): ?array{
+
+        $searchPhraze = '%'.strtolower($searchPhraze).'%';
+
+        $stmt = $this->database->connect()->prepare('
+            Select email,password,name,surname,image from users u
+                Join users_details ud on u.id_user_details= ud.id
+                JOIN users_rooms ur on ur.id_user = u.id
+            WHERE ur.id_room = :givenID
+              AND (
+                  LOWER(ud.name) LIKE :str OR LOWER(ud.surname) LIKE :str
+                  );     
+           ');
+
+        $stmt->bindParam(':givenID', $givenRoomID, PDO::PARAM_INT);
+        $stmt->bindParam(':str', $searchPhraze, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getUserByID(int $givenID): ?User{

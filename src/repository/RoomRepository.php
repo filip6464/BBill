@@ -49,6 +49,32 @@ class RoomRepository extends Repository
         return $result;
     }
 
+    public function getLinkedRooms(int $userID): ?array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            Select * From rooms r JOIN users_rooms ur on r.id = ur.id_room WHERE ur.id_user = :userID;
+        ');
+
+        $stmt->bindParam(':userID', $userID, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        //TODO trzeba wyrzucić informacje jaki dokładnie błąd został tu wywołany, exeption w try catch
+        if ($rooms == false) {
+            return null;
+        }
+
+        foreach ($rooms as $room){
+            $result[] = new Room(
+                $room['id'],$room['id_owner'],$room['title'], $room['created_at']
+            );
+        }
+        return $result;
+    }
+
     public function addRoom(Room $room)
     {
         $date = new DataTime();
