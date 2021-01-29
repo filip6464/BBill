@@ -3,6 +3,7 @@
 require_once 'Repository.php';
 require_once __DIR__.'/../models/Bill.php';
 
+
 class BillRepository extends Repository
 {
 
@@ -30,11 +31,11 @@ class BillRepository extends Repository
         );
     }
 
-    public function addBill(Bill $bill): void
+    public function addBill(Bill $bill)
     {
-        $date = new DataTime();
+        $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-        INSERT INTO bills (id_owner, title, created_at, itemList, incomeList) VALUES (?,?,?,?,?)
+        INSERT INTO bills (id_owner, title, created_at, "itemList", "incomeList") VALUES (?,?,?,?,?);
         ');
 
 
@@ -42,21 +43,28 @@ class BillRepository extends Repository
         $ownerID = 1;
 
         $stmt->execute([
-            $ownerID,
+            $bill->getOwnerID(),
             $bill->getTitle(),
             $date->format('Y-m-d'),
-            $bill->getItemListJson(),
-            $bill->getIncomeListJson()
+            json_encode($bill->getItemList()),
+            json_encode($bill->getIncomeList())
         ]);
+
+        $stmt = $this->database->connect()->prepare('
+        SELECT max(id) from bills;
+        ');
+        $stmt->execute();
+
+
+        $id = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $id = $id[0]['max'];
+        return $id;
     }
 
 
     public function getBills(): ?array
     {
         $result = [];
-
-        //  Select b."id",b."id_owner",title,b.created_at,b."itemList",b."incomeList" From bills JOIN users u on u.id = b.id_owner JOIN users_details ud on ud.id = u.id_user_details;
-        //
 
         $stmt = $this->database->connect()->prepare('
             Select * From bills;
@@ -80,5 +88,35 @@ class BillRepository extends Repository
         return $result;
     }
 
+    public function getUsersBills(int $userid): ?array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+Select b.id, b.id_owner,b.title,b.created_at,b."itemList",b."incomeList" From bills b
+JOIN users_bills ub on b.id = ub.id_bill
+WHERE b.id_owner = :userid 
+GROUP BY b.id;
+');
+
+        $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $bills = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        //TODO trzeba wyrzucić informacje jaki dokładnie błąd został tu wywołany, exeption w try catch
+        if ($bills == false) {
+            return null;
+        }
+
+        foreach ($bills as $bill){
+            $itemlist= json_decode($bill['itemList']);
+            $incomelist= json_decode($bill['incomeList']);
+            $result[] = new Bill(
+                $bill['id'],$bill['id_owner'],$bill['title'], $bill['created_at'],$itemlist , $incomelist
+            );
+        }
+        return $result;
+    }
 
 }

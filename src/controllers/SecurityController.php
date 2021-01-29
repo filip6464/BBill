@@ -17,12 +17,17 @@ class SecurityController extends AppController
 
     public function login(){
 
+        if(isset($_COOKIE["user"])){
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/homepage");
+        }
+
         if (!$this->isPost()) {
             return $this->render('login');
         }
 
         $email = $_POST["email"];
-        $password = md5($_POST['password']);
+        $password = $this->hashPassword($_POST['password']);
 
         $user = $this->userRepostiory->getUser($email);
 
@@ -35,9 +40,17 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if ($user->getPassword() !== $password) {
-            return $this->render('login', ['messages' => ['Wrong password!']]);
+        if(password_verify($password, $user->getPassword())){
+            return $this->render('login', ['messages' => ['Wrong password!',"wproadzone[".$password."]","DB[".$user->getPassword()."]"]]);
         }
+
+        setcookie("user", $user->getLocalID(), time()+3600);
+        setcookie("name", $user->getName(), time()+3600);
+        setcookie("surname", $user->getSurname(), time()+3600);
+        setcookie("avatar", $user->getImage(), time()+3600);
+
+        //TODO uncomment after add role to user
+        //setcookie("role", $user->getRole(), time()+3600);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/homepage");
@@ -61,14 +74,19 @@ class SecurityController extends AppController
 
         //TODO change hash function
 
-        $user = new User($email, md5($password), $name, $surname);
-
-       // return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!'],var_dump($this->userRepository)]);
+        $user = new User($email, $this->hashPassword($password), $name, $surname);
 
         $this->userRepository = new UserRepository();
         $this->userRepository->addUser($user);
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!'],$this->userRepository]);
+    }
+
+    public function logout(){
+        $this->userCookieVerification();
+        setcookie("user", 0, time()-3600);
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
     }
 
 

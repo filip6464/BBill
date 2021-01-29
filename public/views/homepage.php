@@ -7,14 +7,11 @@
 </head>
 <body>
     <header>
-        <a href="#">
-            <i class="fas fa-sign-out-alt"></i>
-        </a>
-        <img src="public/img/logo_small.svg">
+        <?php include __DIR__.'/../sections/header.php';?>
     </header>
     <div class="base-container">
         <nav>
-            <?php include 'leftNavBar.php';?>
+            <?php include __DIR__.'/../sections/leftNavBar.php';?>
         </nav>
         <main>
             <section class="bills">
@@ -27,6 +24,7 @@
                     </div>
                     <ul>
                         <?php
+                        //var_dump($usersbills);
                         foreach ($usersbills as $userbill): ?>
                         <li id="bill-<?=$userbill->getlocalID()?>">
                             <a href="#">

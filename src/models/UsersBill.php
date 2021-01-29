@@ -16,16 +16,15 @@ class UsersBill extends Bill
         $this->localID = $bill->getLocalID();
         $this->title = $bill->getTitle();
         $this->created_at = $bill->getCreatedAt();
-        if($this->itemList == null){
-            $this->itemList = [0];
+        if($bill->itemList == null){
+            $bill->itemList = [0];
         }
         else
             $this->itemList = $bill->getItemList();
-        if($this->incomeList == null)
+        if($bill->incomeList == null)
             $this->incomeList = [0];
         else
-            $this->incomeList = $bill->getIncomeList();
-
+            $bill->incomeList = $bill->getIncomeList();
         $this->ownerID = $bill->getOwnerID();
         $this->user = $user;
     }

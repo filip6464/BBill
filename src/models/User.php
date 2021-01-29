@@ -2,6 +2,7 @@
 
 
 class User {
+    private $localID;
     private $email;
     private $password;
     private $name;
@@ -11,12 +12,25 @@ class User {
 
     public function __construct(string $email, string $password, string $name,string $surname,string $image=null)
     {
+        $this->localID =0;
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
         $this->image = $image;
     }
+
+    public function setLocalID(int $localID): void
+    {
+        $this->localID = $localID;
+    }
+
+    public function getLocalID()
+    {
+        return $this->localID;
+    }
+
+
 
     public function getImage(): string
     {

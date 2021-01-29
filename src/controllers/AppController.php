@@ -31,5 +31,16 @@ class AppController {
         
         print $output;
     }
+
+    protected function userCookieVerification(){
+        if(!isset($_COOKIE["user"])){
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/");
+        }
+    }
+
+    protected function hashPassword($password): string{
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
     
 }

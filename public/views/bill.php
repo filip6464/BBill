@@ -9,42 +9,21 @@
 </head>
 <body>
 <header>
-    <a href="#">
-        <i class="fas fa-sign-out-alt"></i>
-    </a>
-    <img src="public/img/logo_small.svg">
+    <?php include __DIR__.'/../sections/header.php';?>
 </header>
 <div class="base-container">
     <nav>
-        <ul class="nav">
-            <li class="nav">
-                <i class="fas fa-home"></i>
-                <a href="#">Home page</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-plus"></i>
-                <a href="#">New room</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-plus"></i>
-                <a href="#">New bill</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-user-friends"></i>
-                <a href="#">Rooms</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-money-bill"></i>
-                <a href="#">Bills</a>
-            </li>
-            <li class="nav">
-                <i class="fas fa-user-cog"></i>
-                <a href="#">Settings</a>
-            </li>
-        </ul>
+        <?php include __DIR__.'/../sections/leftNavBar.php';?>
     </nav>
     <main>
         <section class="newbill">
+            <?php
+            if(isset($messages)){
+                foreach ($messages as $message) {
+                    echo $message;
+                }
+            }
+            ?>
             <div class="title">Bill - Jacks present</div>
             <div class="bill-title">
                 <div class="label-goal">Goal

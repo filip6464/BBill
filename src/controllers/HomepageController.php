@@ -9,15 +9,16 @@ class HomepageController extends AppController
 {
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png','image/jpeg'];
-    const UPLOAD_DIRECTORY = '/../public/uploads/';
+    const UPLOAD_DIRECTORY = '/../public/img/uploads/';
 
-    private $messages = [];
+    private $messages = array();
     private $billRepostiory;
     private $userRepository;
     private $roomRepostiory;
 
     public function __construct()
     {
+        parent::__construct();
         $this->billRepostiory = new BillRepository();
         $this->userRepository = new UserRepository();
         $this->roomRepostiory = new RoomRepository();
@@ -25,41 +26,67 @@ class HomepageController extends AppController
 
 
     public function homepage(){
+        $this->userCookieVerification();
 
-        $bills = $this->billRepostiory->getBills();
+        $bill = array();
+        $bills = $this->billRepostiory->getUsersBills(intval($_COOKIE['user']));
 
-        $usersbills = [];
-        foreach ($bills as $bill){
-            $user = $this->userRepository->getUserByID($bill->getOwnerID());
-            array_push($usersbills,new UsersBill($user,$bill));
+        if($bills !=null) {
+            $usersbills = array();
+            foreach ($bills as $bill) {
+                $user = $this->userRepository->getUserByID($bill->getOwnerID());
+                array_push($usersbills, new UsersBill($user, $bill));
+            }
         }
 
-        $rooms = $this->roomRepostiory->getRooms();
-        $usersrooms = [];
-        foreach ($rooms as $room){
-            $user = $this->userRepository->getUserByID($room->getOwnerID());
-            $usersroom = new UsersRoom($user,$room);
-            $usersroom->setRoommates($this->userRepository->getRoommates($room->getLocalID()));
-            array_push($usersrooms,$usersroom);
+
+        $rooms = $this->roomRepostiory->getLinkedRooms(intval($_COOKIE['user']));
+        if($rooms != null) {
+            $usersrooms = array();
+            foreach ($rooms as $room) {
+                $user = $this->userRepository->getUserByID($room->getOwnerID());
+                $usersroom = new UsersRoom($user, $room);
+                $usersroom->setRoommates($this->userRepository->getRoommates($room->getLocalID()));
+                array_push($usersrooms, $usersroom);
+            }
         }
 
-        $this->render('homepage', ['usersbills' => $usersbills,'usersrooms' => $usersrooms]);
+        $this->render('homepage', ['usersbills' => $usersbills,'usersrooms' => $usersrooms,'name'=>$_COOKIE['name'],'surname'=>$_COOKIE['surname']]);
     }
 
     public function userSettings(){
+        $this->userCookieVerification();
 
-        if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])){
-
+        if( is_uploaded_file($_FILES['file']['tmp_name']) &&
+            $this->isPost() &&
+            $this->validate($_FILES['file'])){
             move_uploaded_file(
                 $_FILES['file']['tmp_name'],
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $user = new User($_POST['name'],$_POST['surname'],$_POST['description'], $_FILES['file']['name']);
+            $oldUser = $this->userRepository->getUserByID(intval($_COOKIE['user']));
 
-            return $this->render('homepage',['messages' => $this->messages]);
+            $_POST['name'] ==='' ?: $oldUser->setName($_POST['name']);
+            $_POST['surname'] ==='' ?: $oldUser->setSurname($_POST['surname']);
+            $_FILES['file']['name'] ==='' ?: $oldUser->setImage($_FILES['file']['name']);
+
+            if($_POST['password2'] !== '' && strcasecmp($_POST['password'], $_POST['password2']) == 0)
+                $oldUser->setPassword($this->hashPassword($_POST['password']));
+
+            $this->userRepository->updateUser(intval($_COOKIE['user']),$oldUser);
+
+            setcookie("user", $oldUser->getLocalID(), time()+3600);
+            setcookie("name", $oldUser->getName(), time()+3600);
+            setcookie("surname", $oldUser->getSurname(), time()+3600);
+            setcookie("avatar", $oldUser->getImage(), time()+3600);
+
+            array_push($this->messages,"Zakutalizowano uzytkownika");
+
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/homepage");
         }
-
+        array_push($this->messages,"Przledowano strone");
         $this->render('user-settings',['messages' => $this->messages]);
     }
 

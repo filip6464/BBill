@@ -97,6 +97,7 @@ input, textarea {
     justify-content: flex-start;
     width: 100%;
     height: 92vh;
+    overflow-y: hidden;
     }
 
 header {
@@ -125,6 +126,29 @@ header {
         height: 100%;
         align-items: center;
     }
+    header>div{
+        display: flex;
+        align-items: center;
+    }
+
+.activeuser{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+    .activeuser img{
+        width: 12%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+    .activeuser div{
+        font: normal normal normal 20px/37px Century Gothic;
+        color: white;
+        margin-left: 1em;
+    }
+
 nav {
      width: 15vw;
     height: 100%;
@@ -147,10 +171,14 @@ nav {
     }
     
     li.nav{
+        color: #707070;
+        text-align: left;
+        margin-bottom: 1.3em;
+        display: flex;
+        align-items: center;
     border: 1px solid #707070;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 0.6em;
-    text-align: left;
     letter-spacing: 0.7px;
     padding:  0.3em;
     width: 100%;
@@ -167,12 +195,7 @@ nav {
         padding: 0.2em;
         position: relative;
     }
-    
-    li.nav{
-        text-align: left;
-        margin-bottom: 1.3em;
-    }
-    
+
     li.nav:last-child{
         position: absolute;
         bottom: 0;
@@ -236,11 +259,19 @@ font-size: 1.5em;
     }
     .title{
         margin-top: 1em;
-        font-size: 4em;
+        margin-left: 0.7em;
+        font-size: 3.5em;
     }
 
     nav{
         display: none;
+    }
+
+    .activeuser img{
+        width: 25%;
+    }
+    .activeuser div{
+        font-size: 1em;
     }
     .container {
         width: 103vw;

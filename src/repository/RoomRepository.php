@@ -84,14 +84,13 @@ class RoomRepository extends Repository
         ');
 
         //TODO get active userID to assign bill owner
-        $ownerID = 1;
+        $ownerID = intval($_COOKIE['user']);
 
         $stmt->execute([
             $ownerID,
             $room->getTitle(),
             $date->format('Y-m-d')
         ]);
-
 
 
         $stmt = $this->database->connect()->prepare('

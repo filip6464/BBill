@@ -12,8 +12,7 @@
         </div>
         <div class="login_container">
             <div class="messages">
-                <?php
-                var_dump($user);
+                <?
                 if(isset($messages)){
                     foreach ($messages as $message) {
                         echo $message;

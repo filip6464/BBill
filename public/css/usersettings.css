@@ -22,3 +22,7 @@
 .usersettings textarea{
     width: 18%;
 }
+
+.usersettings button{
+    margin: 0.5em;
+}

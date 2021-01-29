@@ -42,7 +42,6 @@ width: 50%;
 .newbill li{
     display: flex;
     border-bottom:solid grey;
-    height: 15%;
     width: 100%;
 }
 
@@ -133,6 +132,14 @@ width: 50%;
     height: 100%;
     margin-top: 0.3em;
 }
+
+.item-input i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    color: #707070;
+}
 .item-input input{
     width: 30%;
 }
@@ -144,6 +151,19 @@ width: 50%;
 .bill-items form{
     display: flex;
     justify-content: flex-start;
+}
+.list-item{
+    display: flex;
+    align-items: center;
+}
+
+.list-item>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em;
+    width: 50%;
+    height: 100%;
 }
 
 @media only screen and (max-device-width: 420px) {
