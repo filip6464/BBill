@@ -2,6 +2,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script type="text/javascript" src="./public/js/script.js" defer></script>
+    <script type="text/javascript" src="./public/js/inputValidation.js" defer></script>
+    <script type="text/javascript" src="./public/js/registerScript.js" defer></script>
     <link rel="stylesheet" type="text/css" href="public/css/register.css">
     <title>Register Page</title>
 </head>

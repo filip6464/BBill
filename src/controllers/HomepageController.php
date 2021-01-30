@@ -28,9 +28,7 @@ class HomepageController extends AppController
     public function homepage(){
         $this->userCookieVerification();
 
-        $bill = array();
         $bills = $this->billRepostiory->getUsersBills(intval($_COOKIE['user']));
-
         if($bills !=null) {
             $usersbills = array();
             foreach ($bills as $bill) {
@@ -86,7 +84,6 @@ class HomepageController extends AppController
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/homepage");
         }
-        array_push($this->messages,"Przledowano strone");
         $this->render('user-settings',['messages' => $this->messages]);
     }
 

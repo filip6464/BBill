@@ -3,6 +3,8 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/newbill.css">
     <link rel="stylesheet" type="text/css" href="public/css/assign-roommates.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
+    <script type="text/javascript" src="./public/js/assignUsers.js" defer></script>
     <script type="text/javascript" src="./public/js/addBill.js" defer></script>
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>
     <title>Home page</title>

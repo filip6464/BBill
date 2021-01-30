@@ -4,19 +4,9 @@ const search = document.querySelector('input[placeholder="Search"]');
     var usersAssigned = assignedUsersGrid.querySelectorAll("img");
     var usersToAssign = document.querySelectorAll(".person");
 
+
+    var listIDsAssignedUsers = [];
     //Variables
-
-Array.prototype.remove = function() {
-    var what, a = arguments, L = a.length, ax;
-    while (L && this.length) {
-        what = a[--L];
-        while ((ax = this.indexOf(what)) !== -1) {
-            this.splice(ax, 1);
-        }
-    }
-    return this;
-};
-
 
     function assignUser(){
         const user = this;
@@ -37,7 +27,6 @@ Array.prototype.remove = function() {
 
 
 function removeUser(){
-    console.log(listIDsAssignedUsers);
         const user = this;
         var id = user.getAttribute("id");
         user.remove();
@@ -46,7 +35,6 @@ function removeUser(){
 
 function loadRooms(rooms){
     rooms.forEach(room => {
-        console.log(room);
         createRoom(room);
     })
 }
@@ -60,7 +48,6 @@ function createRoom(room){
     TitleDATE.innerHTML = room[0].title+" ("+room[0].createdat+")";
     if(room[1].length != 0) {
         room[1].forEach(roommate => {
-            console.log(roommate);
             const ID = clone.querySelector('.person');
             ID.setAttribute("id", roommate.id);
             const NameSurname = clone.querySelector("h6");

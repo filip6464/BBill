@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/usersettings.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <script type="text/javascript" src="./public/js/inputValidation.js" defer></script>
     <script type="text/javascript" src="./public/js/usersettings.js" defer></script>
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>

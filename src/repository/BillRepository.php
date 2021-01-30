@@ -93,10 +93,9 @@ class BillRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-Select b.id, b.id_owner,b.title,b.created_at,b."itemList",b."incomeList" From bills b
+Select * From bills b
 JOIN users_bills ub on b.id = ub.id_bill
-WHERE b.id_owner = :userid 
-GROUP BY b.id;
+WHERE ub.id_user= :userid;
 ');
 
         $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);

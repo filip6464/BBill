@@ -1,7 +1,6 @@
 <?php
 
 echo "
-<script type=\"text/javascript\" src=\"./public/js/searchRoommates.js\" defer></script>
 <section class=\"assignRoommates\">
             <div class=\"title\">Assign Roommates</div>
             <div class=\"iconGrid\">

@@ -40,7 +40,6 @@ class UserRepository extends Repository
                 JOIN users_rooms ur on ur.id_user = u.id 
             WHERE ur.id_room = :givenID;
         ');
-
         $stmt->bindParam(':givenID', $givenRoomID, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -55,10 +54,32 @@ class UserRepository extends Repository
                 $user['email'], $user['password'], $user['name'], $user['surname'], $user['image']
             );
             $temp->setLocalID($user['id']);
-            $result[] = $temp;
+            if(intval($user['id']) != intval($_COOKIE['user']))
+                $result[] = $temp;
         }
         return $result;
     }
+
+    public function getRoommatesAsoc(int $givenRoomID): ?array
+    {
+
+    $ownerID = intval($_COOKIE['user']);
+    //echo "id:[".$ownerID."]";
+        $stmt = $this->database->connect()->prepare('
+Select u.id,email,password,name,surname,image from users u
+Join users_details ud on u.id_user_details= ud.id
+JOIN users_rooms ur on ur.id_user = u.id
+WHERE ur.id_room = :givenID AND ur.id_user <> :ownerID;
+        ');
+        $stmt->bindParam(':givenID', $givenRoomID, PDO::PARAM_INT);
+        $stmt->bindParam(':ownerID', $ownerID, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $users;
+    }
+
 
     public function getRoommatesLike(int $givenRoomID, string $searchPhraze): ?array
     {
@@ -108,26 +129,21 @@ class UserRepository extends Repository
 
     public function addUser(User $user)
     {
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO users_details (name, surname)
-            VALUES (?, ?)
-        ');
-
-        $stmt->execute([
-            $user->getName(),
-            $user->getSurname(),
-        ]);
+        $name = $user->getName();
+        $surname = $user->getSurname();
+        $email = $user->getEmail();
+        $password = $user->getPassword();
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users (email, password, id_user_details)
-            VALUES (?, ?, ?)
+            SELECT addUser(:name, :surname, :email, :password);
         ');
 
-        $stmt->execute([
-            $user->getEmail(),
-            $user->getPassword(),
-            $this->getUserDetailsId($user)
-        ]);
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':surname', $surname, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+
     }
 
     public function getUserDetailsId(User $user): int

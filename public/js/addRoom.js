@@ -1,13 +1,11 @@
-const itemName = document.querySelector('input[name="item-name"]');
-const itemValue = document.querySelector('input[name="item-value"]');
-const listTable = document.querySelector(".items").querySelector("ul");
-const addButton = document.querySelector('.fa-plus-circle');
 const checkButton = document.querySelector('.fa-check');
 
 var arrayIDsAssignedUsers = listIDsAssignedUsers;
 
-function fetchBill(){
-    var user_id = getCookie("user");
+
+function fetchRoom(){
+//TODO change ID from session
+    var user_id = document.cookie.user;
     var title = document.querySelector('input[name="billtitle"]').value;
     var listUsers = JSON.stringify(arrayIDsAssignedUsers);
     var items= [];
@@ -28,7 +26,7 @@ function fetchBill(){
         itemsList: items,
         assignedList: listUsers
     };
-            fetch("/addbill", {
+            fetch("/addroom", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,31 +39,5 @@ function fetchBill(){
             );
                 }
 
-function addItem(){
-
-    var input_name = itemName.value;
-    var input_amount = itemValue.value;
-
-    if(input_name !== "" && !isNaN(input_amount)){
-
-    const list = document.querySelector("#itemList");
-    const clone = list.content.cloneNode(true);
-    const name = clone.querySelector(".name");
-    const value = clone.querySelector(".value");
-    name.innerHTML = input_name;
-    value.innerHTML = input_amount;
-
-        listTable.appendChild(clone);
-    listTable.querySelectorAll("li").forEach(item => item.addEventListener("click",removeItem));
-    }
-    itemName.value = '';
-    itemValue.value = '';
-    }
-
-function removeItem(){
-const item = this;
-item.remove();
-}
-
-checkButton.addEventListener("click", fetchBill);
+checkButton.addEventListener("click", fetchRoom);
 addButton.addEventListener("click",addItem);

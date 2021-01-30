@@ -21,8 +21,25 @@ class RoomController extends AppController
     }
 
     public function newRoom(){
+
         $this->userCookieVerification();
-            return $this->render('new-room',['messages' => $this->messages,'name'=>$_COOKIE['users'],'surname'=>$_COOKIE['users']]);
+
+        $ownerID = intval($_COOKIE['user']);
+
+        $lastusersrooms = [];
+
+        $lastrooms = $this->roomRepostiory->getLinkedRooms($ownerID);
+        if($lastrooms !=null) {
+            foreach ($lastrooms as $lastroom) {
+                $user = $this->userRepostiory->getUserByID($lastroom->getOwnerID());
+                $lastusersroom = new UsersRoom($user, $lastroom);
+                $lastusersroom->setRoommates($this->userRepostiory->getRoommates($lastroom->getLocalID()));
+                array_push($lastusersrooms, $lastusersroom);
+            }
+        }
+        return $this->render('new-room',['messages' => $this->messages,'lastusersrooms' => $lastusersrooms]);
+
     }
+
 
 }

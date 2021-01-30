@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/homepage.css"> 
     <script src="https://kit.fontawesome.com/24ebea2933.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>Home page</title>
 </head>
 <body>
@@ -53,7 +54,6 @@
                             <a href="#">
                                 <h2><?=$userroom->getlocalID()?></h2>
                                 <div>
-                                    <img src="public/img/uploads/<?=$userroom->getOwnerImage()?>">
                                     <?php
                                     $roommates = $userroom->getRoommates();
                                     foreach ($roommates as $roommate):?>

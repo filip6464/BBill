@@ -26,7 +26,6 @@ class BillController extends AppController
         $this->userCookieVerification();
 
         $ownerID = intval($_COOKIE['user']);
-        //echo "to jest cookie".$ownerID;
 
         //array of last users' rooms with roommates inside
         $lastusersrooms = [];
@@ -52,10 +51,11 @@ class BillController extends AppController
             $content = file_get_contents("php://input");
             $decoded = json_decode($content, true);
 
-            //TODO getUserID from session
-            $ownerID = $_COOKIE['user'];
+            $ownerID = intval($_COOKIE['user']);
 
             $lastusersrooms = [];
+
+
 
             $lastrooms = $this->roomRepostiory->getLinkedRooms($ownerID);
 
@@ -63,8 +63,12 @@ class BillController extends AppController
                 $user = $this->userRepostiory->getUserByID($lastroom->getOwnerID());
                 $lastusersroom = [];
                 array_push($lastusersroom, ['id' => $lastroom->getLocalID(), 'title' => $lastroom->getTitle(), 'createdat' => $lastroom->getCreatedAt()]);
-                array_push($lastusersroom, $this->userRepostiory->getRoommatesLike($lastroom->getLocalID(), $decoded['search']));
-                array_push($lastusersrooms, $lastusersroom);
+                if($decoded['search'] != '') {
+                    array_push($lastusersroom, $this->userRepostiory->getRoommatesLike($lastroom->getLocalID(), $decoded['search']));
+                }else {
+                    array_push($lastusersroom, $this->userRepostiory->getRoommatesAsoc($lastroom->getLocalID()));
+                }
+                    array_push($lastusersrooms, $lastusersroom);
             }
             header('Content-type: application/json');
             http_response_code(200);
