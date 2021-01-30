@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
+    <script type="text/javascript" src="./public/js/inputValidation.js" defer></script>
+    <script type="text/javascript" src="./public/js/registerScript.js" defer></script>
     <link rel="stylesheet" type="text/css" href="public/css/register.css">
     <title>Register Page</title>
 </head>
@@ -10,20 +13,26 @@
             <img src="public/img/logo_svg.svg">
         </div>
         <div class="login_container">
-            <form>
+            <div class="messages">
+                <?
+                if(isset($messages)){
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
+            <form class="register" action="register" method="POST">
                 <input name="email" type="text" placeholder="username@gmail.com">
                 <input name="password" type="password" placeholder="Password">
                 <input name="password2" type="password" placeholder="Repeat password">
-                <input name="login" type="text" placeholder="Login">
+                <input name="name" type="text" placeholder="Name">
+                <input name="surname" type="text" placeholder="Suraname">
                 <div class="buttons">
-                    <button>Sign  up</button>
-                    <a href="#">Sign in</a>
+                    <button type="submit">Sign  up</button>
+                    <a href="login">Sign in</a>
                 </div>
-                
-                
             </form>
         </div>
-
     </div>
-
 </body>

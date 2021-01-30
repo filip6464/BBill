@@ -1,19 +1,45 @@
 <?php
 
 
-class User
-{
+class User {
+    private $localID;
     private $email;
     private $password;
     private $name;
     private $surname;
+    protected $image;
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+
+    public function __construct(string $email, string $password, string $name,string $surname,string $image=null)
     {
+        $this->localID =0;
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
+        $this->image = $image;
+    }
+
+    public function setLocalID(int $localID): void
+    {
+        $this->localID = $localID;
+    }
+
+    public function getLocalID()
+    {
+        return $this->localID;
+    }
+
+
+
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image)
+    {
+        $this->image = $image;
     }
 
     public function getEmail(): string

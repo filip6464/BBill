@@ -1,0 +1,128 @@
+.assignRoommates{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.iconGrid{
+    margin: 0.5em;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: auto;
+    grid-gap: 0.5em;
+    padding: 0.3em;
+    overflow-x: hidden;
+    height: 23%;
+}
+
+.assignRoommates img {
+    place-self: center;
+    height: 50%;
+    width: auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.assignRoommates input{
+    display: flex;
+    color: #707070;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    justify-self: flex-start;
+    width: 40%;
+
+}
+
+.searchGrid h5 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.searchGrid{
+    overflow-y: scroll;
+    height: 50%;
+}
+
+
+.roomsGrid{
+    margin: 0.5em;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-gap: 1.2em;;
+    padding: 0.3em;
+    overflow-y: hidden;
+    height: 25%;
+}
+
+
+.person{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0.3em;
+    background: #F1F9FF 0% 0% no-repeat padding-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: normal normal bold 14px/24px Arial;
+    letter-spacing: 0px;
+    color: #2699FB;
+}
+
+.person h6{
+    text-align: center;
+    font-size: 1.1em;
+margin: 0.3em;
+}
+.person img {
+    width: 40%;
+    height: auto;
+}
+
+@media only screen and (max-device-width: 420px) {
+
+.assignRoommates{
+    margin-top: 0;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+    .assignRoommates img {
+        height: 100%;
+    }
+    .assignRoommates input{
+        font-size: 1em;
+        width: 70%;
+    }
+
+    .iconGrid{
+        height: 10%;
+        margin: 1em;
+    }
+
+    .searchBar{
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .searchGrid{
+        margin: 0.5em;
+    }
+
+    .person h6{
+        font-size: 3em;
+        line-height: 1.2em;
+    }
+    .person img {
+        width: 40%;
+        height: auto;
+    }
+}

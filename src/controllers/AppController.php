@@ -4,7 +4,7 @@ class AppController {
 
     private $request;
 
-    public function __construct($request)
+    public function __construct()
     {
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
@@ -30,6 +30,17 @@ class AppController {
         }
         
         print $output;
+    }
+
+    protected function userCookieVerification(){
+        if(!isset($_COOKIE["user"])){
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/");
+        }
+    }
+
+    protected function hashPassword($password): string{
+        return password_hash($password, PASSWORD_DEFAULT);
     }
     
 }
